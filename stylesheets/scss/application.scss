@@ -1,0 +1,514 @@
+@import "bourbon/bourbon";
+@import "reset";
+
+$popup-width: 440px;
+$popup-width-half: $popup-width / 2;
+$popup-margin: -$popup-width-half;
+
+/*--------------------------- GENERAL */
+
+body, html {
+	background-color: #1F1313;
+	color: #333;
+	font-family: futura-pt, 'helvetica neue', helvetica, arial, sans-serif;
+	font-weight: 200;
+	overflow: hidden;
+}
+
+a { 
+	cursor: pointer;
+	text-decoration: none; 
+}
+
+a img { 
+	border: none; 
+}
+
+.clear { 
+	@include clearfix;
+}
+
+.links {
+	@include position(absolute, 40% 0 0 50%);
+	margin: -140px 0 0 -160px;
+	opacity: 0;
+}
+
+.link {
+	@include size(80px 90px);
+	@include transition(all, 0.2s);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	opacity: 0.5;
+}
+
+.info {
+	background-image: url('../../images/icon_info.png');
+}
+
+.dribbble {
+	background-image: url('../../images/icon_dribbble.png');
+}
+
+.twitter {
+	background-image: url('../../images/icon_twitter.png');
+}
+
+.contact {
+	background-image: url('../../images/icon_contact.png');
+}
+
+.link.is-selected, .link.is-selected:hover {
+	opacity: 0.8;
+}
+
+.link:hover {
+	opacity: 0.7;
+}
+
+.link:visited, .link.is-inactive {
+	background-position-y: -90px;
+}
+
+.link.is-inactive:hover {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.title {
+	@include position(absolute, 40% 0 0 50%);
+	color: #FFF1E2;
+	font-family: herb, helvetica, arial, sans-serif;
+	font-size: 85px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	line-height: 80px;
+	margin: 0 0 0 $popup-margin;
+	opacity: 0.8;
+	text-align: center;
+	text-shadow: 1px 1px 0 #1F1313, 2px 2px 0 #1F1313, 3px 3px 0 #1F1313, 4px 4px 0 #1F1313, 5px 5px 0 #1F1313;
+	width: $popup-width;
+}
+
+.popup_container {
+	@include position(absolute, 40% 0 0 50%);
+	margin: -($popup-width-half) 0 0 $popup-margin;
+	opacity: 0;
+	width: $popup-width;
+	z-index: 110;
+}
+
+.arrow {
+	@include size(320px 15px);
+	background: url('images/arrow.png') no-repeat;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+
+.arrow.is-info {
+	background-position: 25px 0;
+}
+
+.arrow.is-dribbble {
+	background-position: 105px 0;
+}
+
+.arrow.is-twitter {
+	background-position: 185px 0;
+}
+
+.arrow.is-contact {
+	background-position: 265px 0;
+}
+
+.popup {
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 3px 10px rgba(black, 0.8);
+	overflow: hidden;
+}
+
+.section {
+	display: none;
+}
+
+.section.is-current {
+	display: block;
+}
+
+.content {
+	overflow: hidden;
+	padding: 40px 40px 20px 40px;
+	position: relative;
+}
+
+#dribbble .content {
+	background-color: #333;
+	padding: 20px 0 20px 0;
+}
+
+#dribbble .top {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 0 0 10px #000;
+	height: 10px;
+	position: relative;
+	top: 1;
+}
+
+.headshot {
+	float: left;
+	margin: 0 20px 0 -10px;
+}
+
+.content h2 {
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.content p {
+	font-size: 24px;
+	padding-bottom: 20px;
+}
+
+.content a {
+	@include transition(background, 0.2s);
+	background-color: #FAF7F6;
+	border-radius: 3px;
+	color: #793D25;
+}
+
+.content a:hover {
+	background-color: #EFE8E5;
+}
+
+.dribbble_next {
+	@include size($popup-width-half 38px);
+	background-color: #F6E431 !important;
+	border-radius: 5px !important;
+	border-top: 2px solid #FDFAD6;
+	box-shadow: 0 2px 10px rgba(black, 0.7);
+	font-weight: bold;
+	@include position(absolute, 0 0 10px 50%);
+	line-height: 40px;
+	margin-left: -($popup-width-half / 2);
+	padding-bottom: 10px;
+	text-align: center;
+	text-shadow: 0 1px 0 #FDFAD6, 0 0 5px rgba(255, 255, 255, 0.3);
+	z-index: 10;
+
+	&:hover {
+		background-color: #F8E95A !important;
+	}
+
+	&:active {
+		border-top: none;
+		line-height: 44px;
+		box-shadow: 0 1px 5px rgba(black, 0.7);
+	}
+}
+
+.dribbble_slider {
+	width: 400px;
+	height: 290px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.shot {
+	@include position(absolute, 0px 0 0 0px);
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	padding: 9px;
+
+	a {
+		@include size(338px 100%);
+		@include position(absolute, 9px 0 0 9px);
+		@include transition(all 0.3s);
+		background-color: rgba(white, 0.8) !important;
+		border-radius: 0;
+		border: 1px solid #F0F0F0;
+		color: #333;
+		display: block;
+		font-size: 18px;
+		font-weight: bold;
+		opacity: 0;
+		padding: 40px 20px 0;
+		text-align: center;
+		text-shadow: 0 1px 0 rgba(white, 0.8), 0 0 20px white;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	i {
+		color: #666;
+		display: block;
+		font-size: 14px;
+		font-weight: normal;
+	}
+
+	img {
+		@include size(378px auto);
+		border: 1px solid #CCC;
+	}
+
+	&:nth-child(1) {
+		box-shadow: 0 3px 8px #000;
+	}
+
+	&:nth-child(2) {
+		top: 3px;
+	}
+
+	&:nth-child(3) {
+		top: 6px;
+	}
+
+	&:nth-child(4) {
+		top: 9px;
+	}
+
+	&:nth-child(5) {
+		top: 12px;
+	}
+}
+
+.tweet_container {
+	height: 400px;
+	margin: 0 40px;
+	overflow: hidden;
+	position: relative;
+}
+
+.tweet_shadow {
+	@include size(100% 10px);
+	@include position(absolute, 0px 0 0 0px);
+	background: url('images/tweet_shadow.png') repeat-x top left;
+	z-index: 10;
+}
+
+.tweet {
+	@include position(absolute, -220px 0 0 0);
+	@include size(100% 140px);
+	color: purple;
+	display: none;
+	font-family: $monospace;
+}
+
+.tweet_scallops_top {
+	@include size(100% 5px);
+	background: url('images/tweet_scallop_top.png') repeat-x bottom left;
+}
+
+.tweet_content {
+	padding: 35px 40px 25px;
+	background-color: white;
+}
+
+.tweet {
+	img {
+		@include size(50px);
+		border-radius: 25px;
+		box-shadow: 0 0 0 1px rgba(black, 0.2);
+		float: right;
+		margin-left: 10px;
+	}
+
+	a {
+		color: purple;
+		text-decoration: underline;
+	}
+
+	h3 {
+		font-size: 16px;
+		font-weight: bold;
+		padding-bottom: 10px;
+
+		a {
+			display: block;
+			font-size: 12px;
+			font-weight: normal;
+		}
+	}
+
+	p {
+		margin-bottom: 10px;
+	}
+}
+
+.meta {
+	font-size: 12px;
+}
+
+.tweet_scallops {
+	width: 100%;
+	height: 5px;
+	background: url('images/tweet_scallop.png') repeat-x top left;
+}
+
+.footer {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+	border-top: 1px solid #CCC;
+	box-shadow:  0 0 8px rgba(black, 0.2);
+	height: 60px;
+	line-height: 60px;
+	padding: 0 15px;
+	position: relative;
+	z-index: 300;
+}
+
+.button {
+	background-color: #F0F0F0;
+	border-radius: 3px;
+	border: 1px solid #CCC;
+	box-shadow: inset 0 0 5px rgba(black, 0.1), 0 1px 0 white;
+	color: #CCC;
+	display: block;
+	float: left;
+	font-family: futura-pt, $helvetica;
+	height: 28px;
+	line-height: 28px;
+	margin: 15px 0;
+	padding: 0 15px;
+	text-shadow: 0 1px 0 white;
+
+	&:hover {
+		@include background-image(linear-gradient(to top, #CCC, #F0F0F0));
+		border-bottom-color: #777;
+		border-bottom-width: 3px;
+		border-color: #999;
+		box-shadow: inset 0 0 0 1px #F0F0F0, 0 1px 0 white;
+		color: #666;
+		margin-top: 13px;
+	}
+
+	&:active {
+		background-color: #F0F0F0;
+		border: 1px solid #999;
+		box-shadow: inset 0 0 5px rgba(black, 0.3), 0 1px 0 white;
+		margin: 15px 0;	
+		text-shadow: 0 1px 0 white;
+	}
+
+	b {
+		@include size(20px 28px);
+		background: url('images/sprite_follow.png') no-repeat;
+		background-position-y: 50%;
+		display: block;
+		float: left;
+	}
+}
+
+.dribbble_follow, 
+.twitter_follow {
+	padding-left: 5px;
+}
+
+.dribbble_follow {
+	b {
+		background-position-x: 0;
+	}
+
+	&:hover b {
+		background-position-x: -17px;
+	}
+}
+
+.twitter_follow {
+	b {
+		background-position-x: -32px;
+		width: 18px;
+	}
+
+	&:hover b {
+		background-position-x: -47px;
+	}
+}
+
+.footer {
+	#dribbble & {
+		border-top: none;
+		box-shadow: 0 0 8px rgba(black, 0.5);
+		margin-top: -20px;
+	}
+
+	#twitter & {
+		@include background-image(linear-gradient(to top, #F0F0F0, white));
+		border-bottom: 1px solid #CCC;
+		border-radius: 5px;
+		border-top: none;
+		box-shadow: inset 0 0 0 1px white;
+		margin-top: -1px;
+	}
+}
+
+.resume {
+	font-size: 18px;
+	text-align: center;
+}
+
+.next, 
+.resume a {
+	@include transition(all, 0.2s);
+	color: #CCC;
+	float: right;
+	font-size: 18px;
+}
+
+.resume a {
+	float: none;
+}
+
+.next:hover, 
+.resume a:hover {
+	color: #793D25;
+}
+
+
+.input_container {
+	position: relative;
+}
+
+.input {
+	border-radius: 3px;
+	box-shadow: inset 0 1px 5px rgba(black, 0.2), 0 0 0 1px #CCC;
+	display: block;
+	font-family: futura-pt, $helvetica;
+	font-size: 16px;
+	font-style: italic;
+	margin-bottom: 10px;
+	padding: 10px 2%;
+	width: 96%;
+}
+
+.input:focus {
+	box-shadow: inset 0 1px 5px rgba(black, 0.2), 0 0 0 3px #F6E431;
+	outline: none;
+}
+
+form .button {
+	@include position(absolute, 5px 6px 0 0);
+	height: 32px;
+	line-height: 28px;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0 20px;
+}
+
+form .button:hover {
+	margin-top: -2px;
+	margin-bottom: 2px;
+}
+
+form .button:active {
+	margin-top: 0;
+	margin-bottom: 0;
+}
