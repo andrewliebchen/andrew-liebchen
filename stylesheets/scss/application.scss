@@ -70,8 +70,8 @@ body, html {
 	color: #333;
 	font-family: avenir, $helvetica;
 	font-weight: 200;
-	overflow: hidden;
 	line-height: 30px;
+	overflow: hidden;
 }
 
 a { 
@@ -108,15 +108,15 @@ a img {
 	@extend %animation-popup-fadein;
 	@include position(absolute, 0px 0px 0px 0px);
   @include size($popup-width 60%);
-  margin: auto;
-	z-index: 99;
 	opacity: 0;
+	z-index: 99;
+  margin: auto;
 }
 
 .links {
 	@include clearfix;
-	width: 100%;
 	position: relative;
+	width: 100%;
 	z-index: 9999;
 }
 
@@ -126,8 +126,8 @@ a img {
 	color: rgba(white, 0.5);
 	display: block;
 	float: left;
-	letter-spacing: 1px;
 	font-size: 18px;
+	letter-spacing: 1px;
 	line-height: 50px;
 	text-align: center;
 	text-shadow: 0 3px 10px rgba(black, 0.8);
@@ -143,9 +143,9 @@ a img {
 }
 
 .popup {
-	box-shadow: 0 3px 10px rgba(black, 0.8);
 	background-color: white;
 	border-radius: 5px;
+	box-shadow: 0 3px 10px rgba(black, 0.8);
 }
 
 .section {
@@ -174,7 +174,7 @@ a img {
 	}
 
 	.headshot {
-		float: right;
+		float: left;
 		margin: -3px 10px 0 0;
 	}
 
@@ -182,9 +182,9 @@ a img {
 		@include transition(background, 0.2s);
 		background-color: lighten($color-link, 25%);
 		border-radius: 5px;
-		padding: 0 5px;
 		color: $color-midground;
 		display: inline-block;
+		padding: 0 5px;
 
 		&:hover {
 			background-color: lighten($color-link, 10%);
@@ -209,7 +209,7 @@ a img {
 }
 
 a.dribbble_next {
-	@include position(absolute, 0 0 10px 50%);
+	@include position(absolute, 0 0 -5px 50%);
 	@include size($popup-width-half 38px);
 	background-color: #F6E431;
 	border-radius: 5px 5px 0 0;
@@ -218,6 +218,7 @@ a.dribbble_next {
 	font-weight: bold;
 	line-height: 40px;
 	margin-left: -($popup-width-half / 2);
+	opacity: 0.7;
 	padding-bottom: 10px;
 	text-align: center;
 	text-shadow: 0 1px 0 #FDFAD6, 0 0 5px rgba(255, 255, 255, 0.3);
@@ -226,18 +227,18 @@ a.dribbble_next {
 	&:hover {
 		background-color: #F8E95A;
 		bottom: 15px;
+		opacity: 1;
 	}
 
 	&:active {
 		border-top: none;
-		line-height: 44px;
 		box-shadow: 0 1px 5px rgba(black, 0.7);
+		line-height: 44px;
 	}
 }
 
 .dribbble_slider {
-	width: 400px;
-	height: 290px;
+	@include szie(400px 290px);
 	margin: 0 auto;
 	position: relative;
 }
@@ -321,14 +322,14 @@ a.dribbble_next {
 	@include box-sizing(border-box);
 	@include position(absolute, -220px 0 0 0);
 	@include size(100% auto);
-	color: $color-background;
-	display: none;
-	text-shadow: 0 1px 0 rgba(white, 0.8);
-	line-height: 20px;
-	padding: 35px 40px 25px;
 	background-color: tint($color-link, 70%);
 	box-shadow: 0 3px 10px rgba(black, 0.8);
+	color: $color-background;
+	display: none;
+	line-height: 20px;
 	margin-top: -5px;
+	padding: 35px 40px 25px;
+	text-shadow: 0 1px 0 rgba(white, 0.8);
 
 	a {
 		color: inherit;
@@ -407,8 +408,8 @@ a.dribbble_next {
 	b {
 		@include size(20px 28px);
 		background-image: url('../../images/sprite_follow.png');
-		background-repeat: no-repeat;
 		background-position-y: 50%;
+		background-repeat: no-repeat;
 		display: block;
 		float: left;
 	}
