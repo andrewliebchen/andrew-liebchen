@@ -29,6 +29,8 @@ $popup-margin: -$popup-width-half;
   }
 }
 
+@include font-face(deutsch, '../../assets/fonts/Deutsch-webfont');
+
 /*--------------------------- GENERAL */
 
 body, html {
@@ -76,7 +78,7 @@ a img {
 .title {
 	@include position(absolute, 40% 0 0 50%);
 	color: #FFF1E2;
-	font-family: herb, helvetica, arial, sans-serif;
+	font-family: deutsch, $helvetica;
 	font-size: 85px;
 	font-weight: normal;
 	letter-spacing: 2px;
@@ -91,6 +93,14 @@ a img {
 .links {
 	@include clearfix;
 	width: 100%;
+}
+
+.popup_container {
+	@include position(absolute, 0px 0px 0px 0px);
+  @include size($popup-width 50%);
+  margin: auto;
+	z-index: 110;
+	opacity: 0;
 }
 
 .link {
@@ -112,14 +122,6 @@ a img {
 		@include carrot(10px, white, bottom);
 		color: rgb(245, 226, 70);
 	}
-}
-
-.popup_container {
-	@include position(absolute, 40% 0 0 50%);
-	margin: 0 0 0 $popup-margin;
-	opacity: 0;
-	width: $popup-width;
-	z-index: 110;
 }
 
 .popup {

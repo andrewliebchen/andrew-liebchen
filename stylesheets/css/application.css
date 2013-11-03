@@ -52,6 +52,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: deutsch;
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../assets/fonts/Deutsch-webfont.eot");
+  src: url("../../assets/fonts/Deutsch-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Deutsch-webfont.woff") format("woff"), url("../../assets/fonts/Deutsch-webfont.ttf") format("truetype"), url("../../assets/fonts/Deutsch-webfont.svg#deutsch") format("svg"); }
+
 /*--------------------------- GENERAL */
 body, html {
   background-color: #1F1313;
@@ -103,7 +110,7 @@ a img {
   top: 40%;
   left: 50%;
   color: #FFF1E2;
-  font-family: herb, helvetica, arial, sans-serif;
+  font-family: deutsch, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 85px;
   font-weight: normal;
   letter-spacing: 2px;
@@ -122,6 +129,18 @@ a img {
     display: table; }
   .links:after {
     clear: both; }
+
+.popup_container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 440px;
+  height: 50%;
+  margin: auto;
+  z-index: 110;
+  opacity: 0; }
 
 .link {
   width: 25%;
@@ -155,15 +174,6 @@ a img {
       margin-left: -5px;
       width: 10px;
       bottom: -5px; }
-
-.popup_container {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin: 0 0 0 -220px;
-  opacity: 0;
-  width: 440px;
-  z-index: 110; }
 
 .popup {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
