@@ -31,7 +31,37 @@ $popup-margin: -$popup-width-half;
   }
 }
 
-@include font-face(deutsch, '../../assets/fonts/Deutsch-webfont');
+@include font-face(deutsch, '../../fonts/Deutsch-webfont');
+
+/*--------------------------- ANIMATIONS */
+
+%animation-background-fadein {
+  @include animation(background-fadein 2s ease-out 0.1s forwards);
+}
+
+@include keyframes(background-fadein) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+%animation-popup-fadein {
+  @include animation(popup-fadein 1s ease-out 0.5s forwards);
+}
+
+@include keyframes(popup-fadein) {
+  0% {
+    @include transform(scale(0.98) translateY(10px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(scale(1) translateY(0));
+    opacity: 1;
+  }
+}
 
 /*--------------------------- GENERAL */
 
@@ -65,30 +95,29 @@ a img {
 }
 
 .background {
+	@extend %animation-background-fadein;
 	@include position(absolute, 0px 0px 0px 0px);
-	@include transition(2s);
 	background-image: url("../../images/bg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
 	width: 100vw;
-
-	&.is-opacified {
-		opacity: 0.2;
-	}
 }
 
 .popup_container {
+	@extend %animation-popup-fadein;
 	@include position(absolute, 0px 0px 0px 0px);
   @include size($popup-width 60%);
   margin: auto;
-	z-index: 110;
+	z-index: 99;
 	opacity: 0;
 }
 
 .links {
 	@include clearfix;
 	width: 100%;
+	position: relative;
+	z-index: 9999;
 }
 
 .link {
@@ -97,7 +126,6 @@ a img {
 	color: rgba(white, 0.5);
 	display: block;
 	float: left;
-	// font-weight: bold;
 	letter-spacing: 1px;
 	font-size: 18px;
 	line-height: 50px;
@@ -132,28 +160,7 @@ a img {
 	overflow: hidden;
 	padding: 40px 40px 20px 40px;
 	position: relative;
-}
 
-#dribbble .content {
-	background-color: #333;
-	padding: 20px 0 20px 0;
-}
-
-#dribbble .top {
-	background-color: white;
-	border-radius: 5px 5px 0 0;
-	box-shadow: 0 0 10px #000;
-	height: 10px;
-	position: relative;
-	top: 1;
-}
-
-.headshot {
-	float: right;
-	margin: -3px 10px 0 0;
-}
-
-.content {
 	h1,
 	h2 {
 		font-size: 24px;
@@ -166,6 +173,11 @@ a img {
 		padding-bottom: 20px;
 	}
 
+	.headshot {
+		float: right;
+		margin: -3px 10px 0 0;
+	}
+
 	a {
 		@include transition(background, 0.2s);
 		background-color: lighten($color-link, 25%);
@@ -173,17 +185,34 @@ a img {
 		padding: 0 5px;
 		color: $color-midground;
 		display: inline-block;
+
 		&:hover {
 			background-color: lighten($color-link, 10%);
 		}
 	}
 }
 
-.dribbble_next {
+#dribbble {
+	.content {
+		background-color: #333;
+		padding: 20px 0 20px 0;
+	}
+
+	.top {
+		background-color: white;
+		border-radius: 5px 5px 0 0;
+		box-shadow: 0 0 10px #000;
+		height: 10px;
+		position: relative;
+		top: 1;
+	}
+}
+
+a.dribbble_next {
 	@include position(absolute, 0 0 10px 50%);
 	@include size($popup-width-half 38px);
-	background-color: #F6E431 !important;
-	border-radius: 5px !important;
+	background-color: #F6E431;
+	border-radius: 5px 5px 0 0;
 	border-top: 2px solid #FDFAD6;
 	box-shadow: 0 2px 10px rgba(black, 0.7);
 	font-weight: bold;
@@ -195,7 +224,8 @@ a img {
 	z-index: 10;
 
 	&:hover {
-		background-color: #F8E95A !important;
+		background-color: #F8E95A;
+		bottom: 15px;
 	}
 
 	&:active {
@@ -287,41 +317,41 @@ a img {
 	z-index: 10;
 }
 
-.tweet {
+.tweet_content {
+	@include box-sizing(border-box);
 	@include position(absolute, -220px 0 0 0);
-	@include size(100% 100px);
+	@include size(100% auto);
 	color: $color-background;
 	display: none;
 	text-shadow: 0 1px 0 rgba(white, 0.8);
 	line-height: 20px;
-}
-
-.tweet_content {
 	padding: 35px 40px 25px;
 	background-color: tint($color-link, 70%);
 	box-shadow: 0 3px 10px rgba(black, 0.8);
-}
+	margin-top: -5px;
 
-.tweet {
 	a {
 		color: inherit;
 		text-decoration: underline;
 	}
 
-	h3 {
-		font-size: 16px;
-		font-weight: bold;
-		padding-bottom: 10px;
+	.user {
+		margin-top: 10px;
 
-		a {
-			display: block;
-			font-size: 12px;
-			font-weight: normal;
+		img,
+		span {
+			display: none;
 		}
 	}
 
-	p {
-		margin-bottom: 10px;
+	.timePosted {
+		font-size: 12px;
+		font-style: italic;
+		margin: 10px 0 0 0;
+	}
+
+	.interact {
+		display: none;
 	}
 }
 
@@ -346,7 +376,7 @@ a img {
 	border-radius: 3px;
 	border: 1px solid #CCC;
 	box-shadow: inset 0 0 5px rgba(black, 0.1), 0 1px 0 white;
-	color: #CCC;
+	color: #999;
 	display: block;
 	float: left;
 	font-family: futura-pt, $helvetica;
@@ -361,8 +391,8 @@ a img {
 		border-bottom-color: #777;
 		border-bottom-width: 3px;
 		border-color: #999;
+		color: #444;
 		box-shadow: inset 0 0 0 1px #F0F0F0, 0 1px 0 white;
-		color: #666;
 		margin-top: 13px;
 	}
 
@@ -459,10 +489,10 @@ a img {
 	border-radius: 3px;
 	box-shadow: inset 0 1px 5px rgba(black, 0.2), 0 0 0 1px #CCC;
 	display: block;
-	font-family: futura-pt, $helvetica;
+	font-family: avenir, $helvetica;
 	font-size: 16px;
 	font-style: italic;
-	margin-bottom: 10px;
+	margin: 5px 0 10px;
 	padding: 10px 2%;
 	width: 96%;
 }
@@ -473,20 +503,20 @@ a img {
 }
 
 form .button {
-	@include position(absolute, 5px 6px 0 0);
-	height: 32px;
-	line-height: 28px;
-	margin-bottom: 0;
-	margin-top: 0;
+	$top: 5px;
+	$height: 41px;
+	@include position(absolute, $top 6px 0 0);
+	height: $height;
+	line-height: $height;
+	margin: 0;
 	padding: 0 20px;
-}
 
-form .button:hover {
-	margin-top: -2px;
-	margin-bottom: 2px;
-}
+	&:hover {
+		top: $top - 2px;
+		margin: 0;
+	}
 
-form .button:active {
-	margin-top: 0;
-	margin-bottom: 0;
+	&:active {
+		top: $top;
+	}
 }

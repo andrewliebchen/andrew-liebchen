@@ -1,16 +1,6 @@
 $(document).ready(function(){
 
-  // show links
-  $('#links').delay(200).animate({ 'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
-    // change opacity of first icon and make it selected
-    $('.info.link').addClass('is-selected');
-    $('.background').addClass('is-opacified');
-  });
-  
-  // show popup
-  $('#popup_container').delay(800).animate({'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
-    $('.popup').css('height', $('.popup').height());
-  });
+  $('.popup').css('height', $('.popup').height());
   
   // change sections 
   $('#links a, .next').click(function(){ // remove .not
