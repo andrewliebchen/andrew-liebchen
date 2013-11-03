@@ -308,6 +308,10 @@ a.dribbble_next {
     border-top: none;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
     line-height: 44px; }
+  @media only screen and (max-device-width: 1024px) {
+    a.dribbble_next {
+      bottom: 15px;
+      opacity: 1; } }
 
 .dribbble_slider {
   width: 400px;

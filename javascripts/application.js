@@ -1,3 +1,5 @@
+twitterFetcher.fetch('396803527814553600', 'tweet', 1, true);
+
 $(document).ready(function(){
 
   $('.popup').css('height', $('.popup').height());
