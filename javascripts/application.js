@@ -1,14 +1,14 @@
 $(document).ready(function(){
   // show links
-  $('#links').delay(800).animate({'margin-top' : '-160px', 'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
+  $('#links').delay(800).animate({ 'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
     // change opacity of first icon and make it selected
     $('.info.link').addClass('is-selected');
+    $('.background').addClass('is-opacified');
   });
   
   // show popup
-  $('#popup_container').delay(1600).animate({'margin-top' : '-100px', 'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
+  $('#popup_container').delay(1600).animate({'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
     $('#title').fadeOut('fast');
-    
     // add initial popup height to its inline style
     $('.popup').css('height', $('.popup').height());
   });
@@ -25,7 +25,7 @@ $(document).ready(function(){
       $(this).addClass('is-selected'); 
     } else {
       var clickedId = $('.is-current.section').next('.section').attr('id');
-      $(clickedId + '_link').addClass('is-selected');
+      $('#' + clickedId + '_link').addClass('is-selected');
     }       
     
     //change the section
@@ -51,22 +51,6 @@ $(document).ready(function(){
         });
       }
     }).removeClass('is-current');
-    
-    // slide the arrow
-    switch(clickedId){
-      case 'info':
-        $('.arrow').animate({'background-position' : '25px'}, 'fast');
-        break;
-      case 'dribbble':
-        $('.arrow').animate({'background-position' : '105px'}, 'fast');
-        break;
-      case 'twitter':
-        $('.arrow').animate({'background-position' : '185px'}, 'fast');
-        break;
-      case 'contact':
-        $('.arrow').animate({'background-position' : '265px'}, 'fast');
-        break;
-    }
   });
   
   // populate the dribble slides

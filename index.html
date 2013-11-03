@@ -4,11 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Andrew Liebchen</title>
-	
-	<script type="text/javascript" src="//use.typekit.net/cmd7pff.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	
+	<title>Andrew Liebchen...is German for sweetheart</title>
+		
 	<link rel="stylesheet" href="stylesheets/css/application.css" type="text/css" media="screen">
 	
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -20,47 +17,46 @@
 
 <body>
 	<div class="wrapper">
-		<div id="links" class="links">
-			<a id="info_link" class="info link is-selected" title="General info about me, blah blah"></a>
-			<a id="dribbble_link" class="dribbble link" title="My last 5 Dribbble shots"></a>
-			<a id="twitter_link" class="twitter link" title="I've got a Twitter"></a>
-			<a id="contact_link" class="contact link" title="Email me"></a>
-		</div><!--.links-->
-		
 		<div id="popup_container" class="popup_container">
-			<div class="arrow is-info"></div>
+			<nav id="links" class="links">
+				<a id="info_link" class="info link is-selected" title="General info about me, blah blah">About</a>
+				<a id="dribbble_link" class="dribbble link" title="My last 5 Dribbble shots">Work</a>
+				<a id="twitter_link" class="twitter link" title="I've got a Twitter">Twitter</a>
+				<a id="contact_link" class="contact link" title="Email me">Contact</a>
+			</nav><!--.links-->
+
 			<div class="popup">
-				<div id="info" class="section is-current">
+				<section id="info" class="section is-current">
 					<div class="content">
 						<img src="images/headshot.png" alt="headshot" class="headshot">
 						<h2>My name is Andrew Liebchen, and yes, “liebchen” is German for “sweetheart."</h2> 
 						<p>Currently, I’m the Lead Designer at <a href="http://gofdn.com" title="Financial Diligence Networks">FDN</a> where I design and develop User Interfaces for the leading hedge fund network. In the past I’ve run my own design firm, studied <a href="http://architecture.risd.edu" title="RISD Architecture">architecture</a>, and worked as a theatrical <a href="http://www.flickr.com/photos/aliebchen/tags/theatre/show/" title="Theatre portfolio on Flickr">set designer</a>.</p>
 					</div><!--.content-->
-					<div class="footer">
+					<footer class="footer">
 						<a class="next">Current projects on Dribbble &#10140;</a>
-					</div><!--.footer-->
-				</div><!--#intro-->
+					</footer><!--.footer-->
+				</section><!--#intro-->
 				
-				<div id="dribbble" class="section">
+				<section id="dribbble" class="section">
 					<div class="top"></div>
 					<div class="content">
 						<a id="dribbble_click" class="dribbble_next">Next shot</a>
 						<ul id="dribbble_slider" class="dribbble_slider"></ul>
 					</div><!--.contnent-->
-					<div class="footer">
+					<footer class="footer">
 						<a href="http://dribbble.com/andrewliebchen" class="dribbble_follow button"><b></b>Follow me on Dribbble</a>
 						<a class="next">I've got a Twitter too &#10140;</a>
-					</div><!--.footer-->
-				</div><!--#dribbble-->
+					</footer><!--.footer-->
+				</section><!--#dribbble-->
 				
-				<div id="twitter" class="section">
-					<div class="footer">
+				<section id="twitter" class="section">
+					<footer class="footer">
 						<a href="https://twitter.com/andrewliebchen" class="twitter_follow button"><b></b>Follow @andrewliebchen</a>
-						<a class="next">...or send me an email &#10140;</a>
-					</div><!--.footer-->
-				</div><!--.section-->
+						<a class="next">...or contact me &#10140;</a>
+					</footer><!--.footer-->
+				</section><!--.section-->
 				
-				<div id="contact" class="section">
+				<section id="contact" class="section">
 					<div class="content">
 						<h2>Send me a love note!</h2>
 						<p>Got a question, a project idea, or just like to chat?  Email me at <a href="mailto:andrewliebchen@gmail.com">andrewliebchen@gmail.com</a>. I'd love to hear from you.</p>
@@ -78,12 +74,12 @@
 						</div><!--#mc_embed_signup-->
 						
 					</div><!--.content-->
-					<div class="footer">
+					<footer class="footer">
 						<p class="resume"><a href="assets/andrew-liebchen-resume.pdf">If you'd like, download my resume...</a></p>
-					</div><!--.footer-->
-				</div><!--#dribbble-->
-				
+					</footer><!--.footer-->
+				</section><!--#contact-->
 			</div><!--.popup-->
+
 			<div class="tweet_container">
 				<div class="tweet_shadow"></div>
 				<div id="tweet" class="tweet">
@@ -96,10 +92,13 @@
 					<div class="tweet_scallops"></div>
 				</div><!--.tweet-->
 			</div><!--.tweet_container-->
+
 		</div><!--.popup_container-->
 		
 		<h1 id="title" class="title">Liebchen is German for sweetheart.</h1>
 	</div><!--.wrapper-->
+
+	<div class="background"></div>
 	
 	<!-- GOOGLE ANALYTICS -->
 	<script type="text/javascript">

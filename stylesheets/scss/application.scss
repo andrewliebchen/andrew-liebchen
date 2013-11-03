@@ -1,16 +1,40 @@
 @import "bourbon/bourbon";
 @import "reset";
 
+$color-link: rgb(245, 226, 70);
+
 $popup-width: 440px;
 $popup-width-half: $popup-width / 2;
 $popup-margin: -$popup-width-half;
+
+@mixin carrot($size: 10px, $background: white, $placement: top) {
+  position: relative;
+
+  &::before {
+    @include transform(rotate(45deg));
+    @include position(absolute, 0 0 0 50%);
+    background-color: $background;
+    content: "";
+    height: $size;
+    margin-left: -($size / 2);
+    width: $size;
+
+    @if $placement == top {
+      top: -($size / 2);
+    }
+
+    @if $placement == bottom {
+      bottom: -($size / 2);
+    }
+  }
+}
 
 /*--------------------------- GENERAL */
 
 body, html {
 	background-color: #1F1313;
 	color: #333;
-	font-family: futura-pt, 'helvetica neue', helvetica, arial, sans-serif;
+	font-family: avenir, $helvetica;
 	font-weight: 200;
 	overflow: hidden;
 }
@@ -28,53 +52,25 @@ a img {
 	@include clearfix;
 }
 
-.links {
-	@include position(absolute, 40% 0 0 50%);
-	margin: -140px 0 0 -160px;
-	opacity: 0;
+.wrapper {
+	position: relative;
+	z-index: 1;
+	height: 100vh;
+	width: 100vw;
 }
 
-.link {
-	@include size(80px 90px);
-	@include transition(all, 0.2s);
-	background-position: 0 0;
+.background {
+	@include position(absolute, 0px 0px 0px 0px);
+	@include transition(2s);
+	background-image: url("../../images/bg.jpg");
 	background-repeat: no-repeat;
-	display: block;
-	float: left;
-	opacity: 0.5;
-}
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
 
-.info {
-	background-image: url('../../images/icon_info.png');
-}
-
-.dribbble {
-	background-image: url('../../images/icon_dribbble.png');
-}
-
-.twitter {
-	background-image: url('../../images/icon_twitter.png');
-}
-
-.contact {
-	background-image: url('../../images/icon_contact.png');
-}
-
-.link.is-selected, .link.is-selected:hover {
-	opacity: 0.8;
-}
-
-.link:hover {
-	opacity: 0.7;
-}
-
-.link:visited, .link.is-inactive {
-	background-position-y: -90px;
-}
-
-.link.is-inactive:hover {
-	cursor: default;
-	opacity: 0.5;
+	&.is-opacified {
+		opacity: 0.2;
+	}
 }
 
 .title {
@@ -92,42 +88,44 @@ a img {
 	width: $popup-width;
 }
 
+.links {
+	@include clearfix;
+	width: 100%;
+}
+
+.link {
+	@include size(25% 50%);
+	@include transition;
+	color: rgba(white, 0.5);
+	display: block;
+	float: left;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+	text-shadow: 0 3px 10px rgba(black, 0.8);
+
+	&:hover {
+		color: rgba($color-link, 0.8);
+	}
+
+	&.is-selected {
+		@include carrot(10px, white, bottom);
+		color: rgb(245, 226, 70);
+	}
+}
+
 .popup_container {
 	@include position(absolute, 40% 0 0 50%);
-	margin: -($popup-width-half) 0 0 $popup-margin;
+	margin: 0 0 0 $popup-margin;
 	opacity: 0;
 	width: $popup-width;
 	z-index: 110;
 }
 
-.arrow {
-	@include size(320px 15px);
-	background: url('images/arrow.png') no-repeat;
-	margin: 0 auto;
-	position: relative;
-	z-index: 1;
-}
-
-.arrow.is-info {
-	background-position: 25px 0;
-}
-
-.arrow.is-dribbble {
-	background-position: 105px 0;
-}
-
-.arrow.is-twitter {
-	background-position: 185px 0;
-}
-
-.arrow.is-contact {
-	background-position: 265px 0;
-}
-
 .popup {
+	box-shadow: 0 3px 10px rgba(black, 0.8);
 	background-color: white;
 	border-radius: 5px;
-	box-shadow: 0 3px 10px rgba(black, 0.8);
 	overflow: hidden;
 }
 
