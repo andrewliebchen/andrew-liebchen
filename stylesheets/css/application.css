@@ -61,11 +61,12 @@ table {
 
 /*--------------------------- GENERAL */
 body, html {
-  background-color: #1F1313;
+  background-color: #1f1313;
   color: #333;
   font-family: avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
-  overflow: hidden; }
+  overflow: hidden;
+  line-height: 30px; }
 
 a {
   cursor: pointer;
@@ -107,19 +108,33 @@ a img {
 
 .title {
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 100px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 440px;
+  height: 50%;
+  margin: auto;
   color: #FFF1E2;
   font-family: deutsch, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 85px;
   font-weight: normal;
-  letter-spacing: 2px;
   line-height: 80px;
-  margin: 0 0 0 -220px;
   opacity: 0.8;
   text-align: center;
-  text-shadow: 1px 1px 0 #1F1313, 2px 2px 0 #1F1313, 3px 3px 0 #1F1313, 4px 4px 0 #1F1313, 5px 5px 0 #1F1313;
-  width: 440px; }
+  text-shadow: 1px 1px 0 #1F1313, 2px 2px 0 #1F1313, 3px 3px 0 #1F1313, 4px 4px 0 #1F1313, 5px 5px 0 #1F1313; }
+
+.popup_container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 440px;
+  height: 60%;
+  margin: auto;
+  z-index: 110;
+  opacity: 0; }
 
 .links {
   *zoom: 1;
@@ -130,18 +145,6 @@ a img {
   .links:after {
     clear: both; }
 
-.popup_container {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  width: 440px;
-  height: 50%;
-  margin: auto;
-  z-index: 110;
-  opacity: 0; }
-
 .link {
   width: 25%;
   height: 50%;
@@ -151,6 +154,7 @@ a img {
   color: rgba(255, 255, 255, 0.5);
   display: block;
   float: left;
+  letter-spacing: 1px;
   font-size: 18px;
   line-height: 50px;
   text-align: center;
@@ -178,8 +182,7 @@ a img {
 .popup {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
-  border-radius: 5px;
-  overflow: hidden; }
+  border-radius: 5px; }
 
 .section {
   display: none; }
@@ -221,14 +224,19 @@ a img {
   -webkit-transition: background, 0.2s;
   -moz-transition: background, 0.2s;
   transition: background, 0.2s;
-  background-color: #FAF7F6;
-  border-radius: 3px;
-  color: #793D25; }
+  background-color: #fcf5bf;
+  border-radius: 5px;
+  padding: 0 5px;
+  color: #793d25;
+  display: inline-block; }
 
 .content a:hover {
-  background-color: #EFE8E5; }
+  background-color: #f8ea76; }
 
 .dribbble_next {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
   width: 220px;
   height: 38px;
   background-color: #F6E431 !important;
@@ -236,9 +244,6 @@ a img {
   border-top: 2px solid #FDFAD6;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
   font-weight: bold;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
   line-height: 40px;
   margin-left: -110px;
   padding-bottom: 10px;
@@ -316,40 +321,31 @@ a img {
 
 .tweet_shadow {
   width: 100%;
-  height: 10px;
+  height: 20px;
   position: absolute;
   top: 0px;
   left: 0px;
-  background: url("images/tweet_shadow.png") repeat-x top left;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0) 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0) 50%);
   z-index: 10; }
 
 .tweet {
   position: absolute;
   top: -220px;
   width: 100%;
-  height: 140px;
-  color: purple;
+  height: 100px;
+  color: #1f1313;
   display: none;
-  font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace; }
-
-.tweet_scallops_top {
-  width: 100%;
-  height: 5px;
-  background: url("images/tweet_scallop_top.png") repeat-x bottom left; }
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  line-height: 20px; }
 
 .tweet_content {
   padding: 35px 40px 25px;
-  background-color: white; }
+  background-color: #fcf6c7;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
 
-.tweet img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
-  float: right;
-  margin-left: 10px; }
 .tweet a {
-  color: purple;
+  color: inherit;
   text-decoration: underline; }
 .tweet h3 {
   font-size: 16px;
@@ -365,14 +361,9 @@ a img {
 .meta {
   font-size: 12px; }
 
-.tweet_scallops {
-  width: 100%;
-  height: 5px;
-  background: url("images/tweet_scallop.png") repeat-x top left; }
-
 .footer {
   background-color: white;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0 0 5px 5px;
   border-top: 1px solid #CCC;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   height: 60px;
@@ -413,7 +404,8 @@ a img {
   .button b {
     width: 20px;
     height: 28px;
-    background: url("images/sprite_follow.png") no-repeat;
+    background-image: url("../../images/sprite_follow.png");
+    background-repeat: no-repeat;
     background-position-y: 50%;
     display: block;
     float: left; }
@@ -438,12 +430,9 @@ a img {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   margin-top: -20px; }
 #twitter .footer {
-  background-image: -webkit-linear-gradient(bottom, #f0f0f0, white);
-  background-image: linear-gradient(to top, #f0f0f0, white);
-  border-bottom: 1px solid #CCC;
   border-radius: 5px;
+  border-bottom: 1px solid #DDD;
   border-top: none;
-  box-shadow: inset 0 0 0 1px white;
   margin-top: -1px; }
 
 .resume {
@@ -458,13 +447,16 @@ a img {
   color: #CCC;
   float: right;
   font-size: 18px; }
+  .next:hover,
+  .resume a:hover {
+    color: #793d25; }
 
 .resume a {
-  float: none; }
+  float: none;
+  font-weight: bold; }
 
-.next:hover,
-.resume a:hover {
-  color: #793D25; }
+.next:hover {
+  margin-right: -3px; }
 
 .input_container {
   position: relative; }

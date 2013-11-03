@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  
+
   // show links
   $('#links').delay(800).animate({ 'opacity' : '1' }, 'slow', 'easeOutCirc', function(){
     // change opacity of first icon and make it selected

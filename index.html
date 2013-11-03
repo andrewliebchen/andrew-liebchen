@@ -11,8 +11,11 @@
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="javascripts/jquery.easing.js"></script>
 	<script src="javascripts/jquery.jribbble.js"></script>
-	<script src="javascripts/jquery.jtweet.js"></script>
+	<script src="javascripts/twitterFetcher_v10_min.js"></script>
 	<script src="javascripts/application.js"></script>
+	<script>
+		twitterFetcher.fetch('396803527814553600', 'tweet', 1, true);
+	</script>
 </head>
 
 <body>
@@ -75,7 +78,11 @@
 						
 					</div><!--.content-->
 					<footer class="footer">
-						<p class="resume"><a href="assets/andrew-liebchen-resume.pdf">If you'd like, download my resume...</a></p>
+						<p class="resume">
+							<a href="assets/andrew-liebchen-resume.pdf">
+								<strong>If you'd like, download my resume...</strong>
+							</a>
+						</p>
 					</footer><!--.footer-->
 				</section><!--#contact-->
 			</div><!--.popup-->
@@ -83,13 +90,10 @@
 			<div class="tweet_container">
 				<div class="tweet_shadow"></div>
 				<div id="tweet" class="tweet">
-					<div class="tweet_scallops_top"></div>
 					<div class="tweet_content">
-						<img src="https://twimg0-a.akamaihd.net/profile_images/1696701388/lightbulb-avatar.png">
 						<h3>Andrew Liebchen <a>@andrewliebchen</a></h3>
 						<div id="the_tweet"></div>
 					</div><!--.tweet_content-->
-					<div class="tweet_scallops"></div>
 				</div><!--.tweet-->
 			</div><!--.tweet_container-->
 
