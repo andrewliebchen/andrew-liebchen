@@ -106,24 +106,6 @@ a img {
   .background.is-opacified {
     opacity: 0.2; }
 
-.title {
-  position: absolute;
-  top: 100px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  width: 440px;
-  height: 50%;
-  margin: auto;
-  color: #FFF1E2;
-  font-family: deutsch, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 85px;
-  font-weight: normal;
-  line-height: 80px;
-  opacity: 0.8;
-  text-align: center;
-  text-shadow: 1px 1px 0 #1F1313, 2px 2px 0 #1F1313, 3px 3px 0 #1F1313, 4px 4px 0 #1F1313, 5px 5px 0 #1F1313; }
-
 .popup_container {
   position: absolute;
   top: 0px;
@@ -208,18 +190,17 @@ a img {
   top: 1; }
 
 .headshot {
-  float: left;
-  margin: 0 20px 0 -10px; }
+  float: right;
+  margin: -3px 10px 0 0; }
 
+.content h1,
 .content h2 {
   font-size: 24px;
   font-weight: bold;
   padding-bottom: 10px; }
-
 .content p {
   font-size: 24px;
   padding-bottom: 20px; }
-
 .content a {
   -webkit-transition: background, 0.2s;
   -moz-transition: background, 0.2s;
@@ -229,9 +210,8 @@ a img {
   padding: 0 5px;
   color: #793d25;
   display: inline-block; }
-
-.content a:hover {
-  background-color: #f8ea76; }
+  .content a:hover {
+    background-color: #f8ea76; }
 
 .dribbble_next {
   position: absolute;

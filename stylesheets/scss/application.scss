@@ -78,20 +78,6 @@ a img {
 	}
 }
 
-.title {
-	@include position(absolute, 100px 0px 0px 0px);
-  @include size($popup-width 50%);
-  margin: auto;
-	color: #FFF1E2;
-	font-family: deutsch, $helvetica;
-	font-size: 85px;
-	font-weight: normal;
-	line-height: 80px;
-	opacity: 0.8;
-	text-align: center;
-	text-shadow: 1px 1px 0 #1F1313, 2px 2px 0 #1F1313, 3px 3px 0 #1F1313, 4px 4px 0 #1F1313, 5px 5px 0 #1F1313;
-}
-
 .popup_container {
 	@include position(absolute, 0px 0px 0px 0px);
   @include size($popup-width 60%);
@@ -163,32 +149,34 @@ a img {
 }
 
 .headshot {
-	float: left;
-	margin: 0 20px 0 -10px;
+	float: right;
+	margin: -3px 10px 0 0;
 }
 
-.content h2 {
-	font-size: 24px;
-	font-weight: bold;
-	padding-bottom: 10px;
-}
+.content {
+	h1,
+	h2 {
+		font-size: 24px;
+		font-weight: bold;
+		padding-bottom: 10px;
+	}
 
-.content p {
-	font-size: 24px;
-	padding-bottom: 20px;
-}
+	p {
+		font-size: 24px;
+		padding-bottom: 20px;
+	}
 
-.content a {
-	@include transition(background, 0.2s);
-	background-color: lighten($color-link, 25%);
-	border-radius: 5px;
-	padding: 0 5px;
-	color: $color-midground;
-	display: inline-block;
-}
-
-.content a:hover {
-	background-color: lighten($color-link, 10%);
+	a {
+		@include transition(background, 0.2s);
+		background-color: lighten($color-link, 25%);
+		border-radius: 5px;
+		padding: 0 5px;
+		color: $color-midground;
+		display: inline-block;
+		&:hover {
+			background-color: lighten($color-link, 10%);
+		}
+	}
 }
 
 .dribbble_next {
