@@ -438,10 +438,10 @@ a.dribbble_next {
   color: #999;
   display: block;
   float: left;
-  font-family: futura-pt, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
   height: 28px;
   line-height: 28px;
-  margin: 15px 0;
+  margin: 15px 5px 15px 0;
   padding: 0 15px;
   text-shadow: 0 1px 0 white; }
   .button:hover {
