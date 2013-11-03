@@ -1,64 +1,545 @@
-/*
-Syntax error: Undefined mixin 'szie'.
-        on line 241 of scss/application.scss, in `szie'
-        from line 241 of scss/application.scss
-
-236: 		line-height: 44px;
-237: 	}
-238: }
-239: 
-240: .dribbble_slider {
-241: 	@include szie(400px 290px);
-242: 	margin: 0 auto;
-243: 	position: relative;
-244: }
-245: 
-246: .shot {
-
-Backtrace:
-scss/application.scss:241:in `szie'
-scss/application.scss:241
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:201:in `each'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:283:in `block in watch'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `call'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/Users/andrewliebchen/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/darwin.rb:38:in `block in start'
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'szie'.\A         on line 241 of scss/application.scss, in `szie'\A         from line 241 of scss/application.scss\A \A 236: 		line-height: 44px;\A 237: 	}\A 238: }\A 239: \A 240: .dribbble_slider {\A 241: 	@include szie(400px 290px);\A 242: 	margin: 0 auto;\A 243: 	position: relative;\A 244: }\A 245: \A 246: .shot {"; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+input, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: deutsch;
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../fonts/Deutsch-webfont.eot");
+  src: url("../../fonts/Deutsch-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Deutsch-webfont.woff") format("woff"), url("../../fonts/Deutsch-webfont.ttf") format("truetype"), url("../../fonts/Deutsch-webfont.svg#deutsch") format("svg"); }
+
+/*--------------------------- ANIMATIONS */
+.background {
+  -webkit-animation: background-fadein 2s ease-out 0.1s forwards;
+  -moz-animation: background-fadein 2s ease-out 0.1s forwards;
+  animation: background-fadein 2s ease-out 0.1s forwards; }
+
+@-webkit-keyframes background-fadein {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.2; } }
+
+@-moz-keyframes background-fadein {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.2; } }
+
+@-o-keyframes background-fadein {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.2; } }
+
+@keyframes background-fadein {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.2; } }
+
+.popup_container {
+  -webkit-animation: popup-fadein 1s ease-out 0.5s forwards;
+  -moz-animation: popup-fadein 1s ease-out 0.5s forwards;
+  animation: popup-fadein 1s ease-out 0.5s forwards; }
+
+@-webkit-keyframes popup-fadein {
+  0% {
+    -webkit-transform: scale(0.98) translateY(10px);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+    opacity: 1; } }
+
+@-moz-keyframes popup-fadein {
+  0% {
+    -moz-transform: scale(0.98) translateY(10px);
+    opacity: 0; }
+
+  100% {
+    -moz-transform: scale(1) translateY(0);
+    opacity: 1; } }
+
+@-o-keyframes popup-fadein {
+  0% {
+    -o-transform: scale(0.98) translateY(10px);
+    opacity: 0; }
+
+  100% {
+    -o-transform: scale(1) translateY(0);
+    opacity: 1; } }
+
+@keyframes popup-fadein {
+  0% {
+    transform: scale(0.98) translateY(10px);
+    opacity: 0; }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1; } }
+
+/*--------------------------- GENERAL */
+body, html {
+  background-color: #1f1313;
+  color: #333;
+  font-family: avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  line-height: 30px;
+  overflow: hidden; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+a img {
+  border: none; }
+
+.clear {
+  *zoom: 1; }
+  .clear:before, .clear:after {
+    content: " ";
+    display: table; }
+  .clear:after {
+    clear: both; }
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw; }
+
+.background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: url("../../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw; }
+
+.popup_container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 440px;
+  height: 60%;
+  opacity: 0;
+  z-index: 99;
+  margin: auto; }
+
+.links {
+  *zoom: 1;
+  position: relative;
+  width: 100%;
+  z-index: 9999; }
+  .links:before, .links:after {
+    content: " ";
+    display: table; }
+  .links:after {
+    clear: both; }
+
+.link {
+  width: 25%;
+  height: 50%;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  float: left;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  text-align: center;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
+  .link:hover {
+    color: rgba(245, 226, 70, 0.8); }
+  .link.is-selected {
+    position: relative;
+    color: #f5e246; }
+    .link.is-selected::before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      left: 50%;
+      background-color: white;
+      content: "";
+      height: 10px;
+      margin-left: -5px;
+      width: 10px;
+      bottom: -5px; }
+
+.popup {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
+
+.section {
+  display: none; }
+
+.section.is-current {
+  display: block; }
+
+.content {
+  overflow: hidden;
+  padding: 40px 40px 20px 40px;
+  position: relative; }
+  .content h1,
+  .content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 10px; }
+  .content p {
+    font-size: 24px;
+    padding-bottom: 20px; }
+  .content .headshot {
+    float: left;
+    margin: -3px 10px 0 0; }
+  .content a {
+    -webkit-transition: background, 0.2s;
+    -moz-transition: background, 0.2s;
+    transition: background, 0.2s;
+    background-color: #fcf5bf;
+    border-radius: 5px;
+    color: #793d25;
+    display: inline-block;
+    padding: 0 5px; }
+    .content a:hover {
+      background-color: #f8ea76; }
+
+#dribbble .content {
+  background-color: #333;
+  padding: 20px 0 20px 0; }
+#dribbble .top {
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 10px #000;
+  height: 10px;
+  position: relative;
+  top: 1; }
+
+a.dribbble_next {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 220px;
+  height: 38px;
+  background-color: #F6E431;
+  border-radius: 5px 5px 0 0;
+  border-top: 2px solid #FDFAD6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  line-height: 40px;
+  margin-left: -110px;
+  opacity: 0.7;
+  padding-bottom: 10px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fdfad6, 0 0 5px rgba(255, 255, 255, 0.3);
+  z-index: 10; }
+  a.dribbble_next:hover {
+    background-color: #F8E95A;
+    bottom: 15px;
+    opacity: 1; }
+  a.dribbble_next:active {
+    border-top: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+    line-height: 44px; }
+
+.dribbble_slider {
+  width: 400px;
+  height: 290px;
+  margin: 0 auto;
+  position: relative; }
+
+.shot {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  padding: 9px; }
+  .shot a {
+    width: 338px;
+    height: 100%;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 0;
+    border: 1px solid #F0F0F0;
+    color: #333;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    padding: 40px 20px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 20px white; }
+    .shot a:hover {
+      opacity: 1; }
+  .shot i {
+    color: #666;
+    display: block;
+    font-size: 14px;
+    font-weight: normal; }
+  .shot img {
+    width: 378px;
+    height: auto;
+    border: 1px solid #CCC; }
+  .shot:nth-child(1) {
+    box-shadow: 0 3px 8px #000; }
+  .shot:nth-child(2) {
+    top: 3px; }
+  .shot:nth-child(3) {
+    top: 6px; }
+  .shot:nth-child(4) {
+    top: 9px; }
+  .shot:nth-child(5) {
+    top: 12px; }
+
+.tweet_container {
+  height: 400px;
+  margin: 0 40px;
+  overflow: hidden;
+  position: relative; }
+
+.tweet_shadow {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0) 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0) 50%);
+  z-index: 10; }
+
+.tweet_content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: -220px;
+  width: 100%;
+  height: auto;
+  background-color: #fcf6c7;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+  color: #1f1313;
+  display: none;
+  line-height: 20px;
+  margin-top: -5px;
+  padding: 35px 40px 25px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  .tweet_content a {
+    color: inherit;
+    text-decoration: underline; }
+  .tweet_content .user {
+    margin-top: 10px; }
+    .tweet_content .user img,
+    .tweet_content .user span {
+      display: none; }
+  .tweet_content .timePosted {
+    font-size: 12px;
+    font-style: italic;
+    margin: 10px 0 0 0; }
+  .tweet_content .interact {
+    display: none; }
+
+.meta {
+  font-size: 12px; }
+
+.footer {
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #CCC;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
+  position: relative;
+  z-index: 300; }
+
+.button {
+  background-color: #F0F0F0;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 0 white;
+  color: #999;
+  display: block;
+  float: left;
+  font-family: futura-pt, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 28px;
+  line-height: 28px;
+  margin: 15px 0;
+  padding: 0 15px;
+  text-shadow: 0 1px 0 white; }
+  .button:hover {
+    background-image: -webkit-linear-gradient(bottom, #cccccc, #f0f0f0);
+    background-image: linear-gradient(to top, #cccccc, #f0f0f0);
+    border-bottom-color: #777;
+    border-bottom-width: 3px;
+    border-color: #999;
+    color: #444;
+    box-shadow: inset 0 0 0 1px #F0F0F0, 0 1px 0 white;
+    margin-top: 13px; }
+  .button:active {
+    background-color: #F0F0F0;
+    border: 1px solid #999;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 1px 0 white;
+    margin: 15px 0;
+    text-shadow: 0 1px 0 white; }
+  .button b {
+    width: 20px;
+    height: 28px;
+    background-image: url("../../images/sprite_follow.png");
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    display: block;
+    float: left; }
+
+.dribbble_follow,
+.twitter_follow {
+  padding-left: 5px; }
+
+.dribbble_follow b {
+  background-position-x: 0; }
+.dribbble_follow:hover b {
+  background-position-x: -17px; }
+
+.twitter_follow b {
+  background-position-x: -32px;
+  width: 18px; }
+.twitter_follow:hover b {
+  background-position-x: -47px; }
+
+#dribbble .footer {
+  border-top: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  margin-top: -20px; }
+#twitter .footer {
+  border-radius: 5px;
+  border-bottom: 1px solid #DDD;
+  border-top: none;
+  margin-top: -1px; }
+
+.resume {
+  font-size: 18px;
+  text-align: center; }
+
+.next,
+.resume a {
+  -webkit-transition: all, 0.2s;
+  -moz-transition: all, 0.2s;
+  transition: all, 0.2s;
+  color: #CCC;
+  float: right;
+  font-size: 18px; }
+  .next:hover,
+  .resume a:hover {
+    color: #793d25; }
+
+.resume a {
+  float: none;
+  font-weight: bold; }
+
+.next:hover {
+  margin-right: -3px; }
+
+.input_container {
+  position: relative; }
+
+.input {
+  border-radius: 3px;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 0 1px #cccccc;
+  display: block;
+  font-family: avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  margin: 5px 0 10px;
+  padding: 10px 2%;
+  width: 96%; }
+
+.input:focus {
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #f6e431;
+  outline: none; }
+
+form .button {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  height: 41px;
+  line-height: 41px;
+  margin: 0;
+  padding: 0 20px; }
+  form .button:hover {
+    top: 3px;
+    margin: 0; }
+  form .button:active {
+    top: 5px; }

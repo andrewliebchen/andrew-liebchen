@@ -238,7 +238,7 @@ a.dribbble_next {
 }
 
 .dribbble_slider {
-	@include szie(400px 290px);
+	@include size(400px 290px);
 	margin: 0 auto;
 	position: relative;
 }
