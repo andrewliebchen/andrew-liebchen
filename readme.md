@@ -2,7 +2,7 @@
 
 ### What the heck is this?
 
-Its the personal site for me, Andrew Liebchen. I'm a UI designer in Boston/Cambridge, MA.  Currently, I'm the lead designer at [FDN](http://www.gofdn.com).
+Its the personal site for me, Andrew Liebchen. I'm a UI designer in Boston/Cambridge, MA.  Currently, I'm the lead designer at [OpenGov](http://www.opengov.com).
 
 ### You're a designer?  Where can I find examples of your work?
 
